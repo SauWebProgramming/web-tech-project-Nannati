@@ -1,25 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sheger Stream </title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Netflix-style Interactive Movie Library - Web Technologies Project">
+    <title>CineMax - Your Movie Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <header>
-    <div class="header-content">
-        <h1 class="logo">SHEGER STREAM</h1>
-        <input type="text" id="search-bar" placeholder="Search movies & series...">
-        <nav class="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#shows">Shows</a>
-            <a href="#movies">Movies</a>
-            <a href="#favorites">My Favorite</a>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1 class="logo">CineMax</h1>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active" data-page="home">Ana Sayfa</a></li>
+                    <li><a href="#movies" class="nav-link" data-page="movies">Filmler</a></li>
+                    <li><a href="#favorites" class="nav-link" data-page="favorites">Favorilerim</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="mainContent">
+        <!-- Home Page Content (Default) -->
+        <section id="homePage" class="page-section active">
+            <!-- Hero Section -->
+            <section class="hero" id="heroSection">
+                <div class="hero-content">
+                    <h2 class="hero-title"></h2>
+                    <p class="hero-description"></p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="heroPlayBtn">▶ Oynat</button>
+                        <button class="btn btn-secondary" id="heroInfoBtn">ℹ Bilgi</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search and Filter Section -->
+            <section class="search-section">
+                <div class="container">
+                    <div class="search-filter-wrapper">
+                        <div class="search-box">
+                            <input type="search" id="searchInput" placeholder="Film ara..." class="search-input">
+                            <button class="search-btn" id="searchBtn">🔍</button>
+                        </div>
+                        <div class="filter-box">
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="all">Tüm Kategoriler</option>
+                                <option value="Aksiyon">Aksiyon</option>
+                                <option value="Bilim Kurgu">Bilim Kurgu</option>
+                                <option value="Komedi">Komedi</option>
+                                <option value="Dram">Dram</option>
+                                <option value="Korku">Korku</option>
+                                <option value="Macera">Macera</option>
+                                <option value="Romantik">Romantik</option>
+                                <option value="Gerilim">Gerilim</option>
+                            </select>
+                            <select id="yearFilter" class="filter-select">
+                                <option value="all">Tüm Yıllar</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2010s">2010-2019</option>
+                                <option value="2000s">2000-2009</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Movies Grid -->
+            <section class="movies-section">
+                <div class="container">
+                    <h2 class="section-title">Popüler Filmler</h2>
+                    <div class="movies-grid" id="moviesGrid">
+                        <!-- Movies will be dynamically loaded here -->
+                    </div>
+                    <div class="loading" id="loadingSpinner">Yükleniyor...</div>
+                    <div class="no-results" id="noResults">Sonuç bulunamadı.</div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Movies Page -->
+        <section id="moviesPage" class="page-section">
+            <div class="container">
+                <h2 class="page-title">Tüm Filmler</h2>
+                <div class="movies-grid" id="allMoviesGrid">
+                    <!-- All movies will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Favorites Page -->
+        <section id="favoritesPage" class="page-section">
+            <div class="container">
+                <h2 class="page-title">Favorilerim</h2>
+                <div id="favoritesEmpty" class="empty-state">
+                    <p>Henüz favori filminiz yok.</p>
+                    <p>Kalp ikonuna tıklayarak filmlerinizi favorilere ekleyebilirsiniz.</p>
+                </div>
+                <div class="movies-grid" id="favoritesGrid">
+                    <!-- Favorite movies will be displayed here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Movie Detail Modal -->
+    <div class="modal" id="movieModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <article class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-hero" id="modalHero">
+                <div class="modal-hero-content">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-meta">
+                        <span class="modal-rating" id="modalRating"></span>
+                        <span class="modal-year" id="modalYear"></span>
+                        <span class="modal-duration" id="modalDuration"></span>
+                    </div>
+                    <div class="modal-buttons">
+                        <button class="btn btn-primary">▶ Oynat</button>
+                        <button class="btn btn-icon" id="modalFavoriteBtn" title="Favorilere Ekle">♡</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3>Özet</h3>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-info">
+                    <div class="modal-info-item">
+                        <strong>Kategori:</strong>
+                        <span id="modalGenre"></span>
+                    </div>
+                    <div class="modal-info-item">
+                        <strong>Yönetmen:</strong>
+                        <span id="modalDirector"></span>
+                    </div>
+                    <div class="modal-info-item">
+                        <strong>Oyuncular:</strong>
+                        <span id="modalCast"></span>
+                    </div>
+                </div>
+            </div>
+        </article>
     </div>
-</header>
-  </body>
-</html> 
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CineMax - Web Teknolojileri Projesi</p>
+            <p>Bu proje eğitim amaçlıdır.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
