@@ -287,10 +287,27 @@ function toggleFavorite(movie) {
     // Save to localStorage
     saveFavoritesToStorage();
     
-    // Re-render
-    renderMovies(filteredMovies);
-    renderAllMovies();
+    // Update all favorite buttons for this movie (instead of re-rendering everything)
+    updateFavoriteButtons(movie.id);
+    
+    // Only re-render the favorites page
     renderFavorites();
+}
+
+function updateFavoriteButtons(movieId) {
+    // Find all favorite buttons for this movie across all grids
+    const buttons = document.querySelectorAll(`.favorite-btn[data-id="${movieId}"]`);
+    const isFavorite = favorites.some(fav => fav.id === movieId);
+    
+    buttons.forEach(button => {
+        if (isFavorite) {
+            button.classList.add('active');
+            button.textContent = '♥';
+        } else {
+            button.classList.remove('active');
+            button.textContent = '♡';
+        }
+    });
 }
 
 function loadFavoritesFromStorage() {
