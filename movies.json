@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Inception",
+    "type": "movie",
     "year": 2010,
     "genre": "Bilim Kurgu",
     "rating": 8.8,
@@ -15,7 +16,8 @@
   {
     "id": 2,
     "title": "The Dark Knight",
-    "year": 2008,
+    "type": "movie",      
+    "year": 2008, 
     "genre": "Aksiyon",
     "rating": 9.0,
     "duration": "152 dk",
@@ -28,7 +30,8 @@
   {
     "id": 3,
     "title": "Interstellar",
-    "year": 2014,
+    "type": "movie",
+    "year": 2014, 
     "genre": "Bilim Kurgu",
     "rating": 8.6,
     "duration": "169 dk",
@@ -41,6 +44,7 @@
   {
     "id": 4,
     "title": "The Shawshank Redemption",
+    "type": "movie",
     "year": 1994,
     "genre": "Dram",
     "rating": 9.3,
@@ -54,6 +58,7 @@
   {
     "id": 5,
     "title": "Pulp Fiction",
+    "type": "movie",
     "year": 1994,
     "genre": "Gerilim",
     "rating": 8.9,
@@ -67,6 +72,7 @@
   {
     "id": 6,
     "title": "The Matrix",
+    "type": "movie",
     "year": 1999,
     "genre": "Bilim Kurgu",
     "rating": 8.7,
@@ -80,6 +86,7 @@
   {
     "id": 7,
     "title": "Forrest Gump",
+    "type": "movie",
     "year": 1994,
     "genre": "Dram",
     "rating": 8.8,
@@ -93,6 +100,7 @@
   {
     "id": 8,
     "title": "Fight Club",
+    "type": "movie",
     "year": 1999,
     "genre": "Dram",
     "rating": 8.8,
@@ -106,6 +114,7 @@
   {
     "id": 9,
     "title": "The Godfather",
+    "type": "movie",
     "year": 1972,
     "genre": "Dram",
     "rating": 9.2,
@@ -119,6 +128,7 @@
   {
     "id": 10,
     "title": "Gladiator",
+    "type": "movie",
     "year": 2000,
     "genre": "Aksiyon",
     "rating": 8.5,
@@ -132,6 +142,7 @@
   {
     "id": 11,
     "title": "Titanic",
+    "type": "movie",
     "year": 1997,
     "genre": "Romantik",
     "rating": 7.9,
@@ -145,6 +156,7 @@
   {
     "id": 12,
     "title": "Avatar",
+    "type": "movie",
     "year": 2009,
     "genre": "Bilim Kurgu",
     "rating": 7.9,
@@ -158,6 +170,7 @@
   {
     "id": 13,
     "title": "The Avengers",
+    "type": "movie",
     "year": 2012,
     "genre": "Aksiyon",
     "rating": 8.0,
@@ -171,6 +184,7 @@
   {
     "id": 14,
     "title": "Joker",
+    "type": "movie",
     "year": 2019,
     "genre": "Gerilim",
     "rating": 8.4,
@@ -184,6 +198,7 @@
   {
     "id": 15,
     "title": "Parasite",
+    "type": "movie",
     "year": 2019,
     "genre": "Gerilim",
     "rating": 8.5,
@@ -197,6 +212,7 @@
   {
     "id": 16,
     "title": "Spider-Man: No Way Home",
+    "type": "movie",
     "year": 2021,
     "genre": "Aksiyon",
     "rating": 8.2,
@@ -210,6 +226,7 @@
   {
     "id": 17,
     "title": "Oppenheimer",
+    "type": "movie",
     "year": 2023,
     "genre": "Dram",
     "rating": 8.3,
@@ -223,6 +240,7 @@
   {
     "id": 18,
     "title": "Dune",
+    "type": "movie",
     "year": 2021,
     "genre": "Bilim Kurgu",
     "rating": 8.0,
@@ -236,6 +254,7 @@
   {
     "id": 19,
     "title": "The Batman",
+    "type": "movie",
     "year": 2022,
     "genre": "Aksiyon",
     "rating": 7.8,
@@ -249,6 +268,7 @@
   {
     "id": 20,
     "title": "The Hangover",
+    "type": "movie",
     "year": 2009,
     "genre": "Komedi",
     "rating": 7.7,
@@ -262,6 +282,7 @@
   {
     "id": 21,
     "title": "Jurassic Park",
+    "type": "movie",
     "year": 1993,
     "genre": "Macera",
     "rating": 8.2,
@@ -275,6 +296,7 @@
   {
     "id": 22,
     "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "type": "movie",
     "year": 2001,
     "genre": "Macera",
     "rating": 8.8,
@@ -288,6 +310,7 @@
   {
     "id": 23,
     "title": "Harry Potter and the Sorcerer's Stone",
+    "type": "movie",
     "year": 2001,
     "genre": "Macera",
     "rating": 7.6,
@@ -301,6 +324,7 @@
   {
     "id": 24,
     "title": "Get Out",
+    "type": "movie",
     "year": 2017,
     "genre": "Korku",
     "rating": 7.7,
@@ -314,6 +338,7 @@
   {
     "id": 25,
     "title": "A Quiet Place",
+    "type": "movie",
     "year": 2018,
     "genre": "Korku",
     "rating": 7.5,
@@ -327,6 +352,7 @@
   {
     "id": 26,
     "title": "La La Land",
+    "type": "movie",
     "year": 2016,
     "genre": "Romantik",
     "rating": 8.0,
@@ -340,6 +366,7 @@
   {
     "id": 27,
     "title": "Top Gun: Maverick",
+    "type": "movie",
     "year": 2022,
     "genre": "Aksiyon",
     "rating": 8.2,
@@ -353,6 +380,7 @@
   {
     "id": 28,
     "title": "Superbad",
+    "type": "movie",
     "year": 2007,
     "genre": "Komedi",
     "rating": 7.6,
@@ -366,6 +394,7 @@
   {
     "id": 29,
     "title": "Everything Everywhere All at Once",
+    "type": "movie",
     "year": 2022,
     "genre": "Bilim Kurgu",
     "rating": 7.8,
@@ -379,6 +408,7 @@
   {
     "id": 30,
     "title": "Mad Max: Fury Road",
+    "type": "movie",
     "year": 2015,
     "genre": "Aksiyon",
     "rating": 8.1,
@@ -388,6 +418,174 @@
     "description": "Post-apokaliptik bir çölde, Max bir kadın savaşçıyla birlikte despotik bir liderden kaçmaya çalışır.",
     "poster": "https://m.media-amazon.com/images/M/MV5BZDRkODJhOTgtOTc1OC00NTgzLTk4NjItNDgxZDY4YjlmNDY2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
     "backdrop": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv9eFVwDgnwHSbgaUPASiBdP51Par4IgDwqg&s"
+  },
+{
+    "id": 31,
+    "title": "Breaking Bad",
+    "type": "series",
+    "year": 2008,
+    "genre": "Dram",
+    "rating": 9.5,
+    "duration": "5 Sezon",
+    "director": "Vince Gilligan",
+    "cast": "Bryan Cranston, Aaron Paul, Anna Gunn, Dean Norris",
+    "description": "Kanser teşhisi konan bir kimya öğretmeni, ailesinin geleceğini güvence altına almak için metamfetamin üretmeye başlar ve suç dünyasına adım atar.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+    "backdrop": "https://images8.alphacoders.com/633/633643.jpg"
+  },
+  {
+    "id": 32,
+    "title": "Game of Thrones",
+    "type": "series",
+    "year": 2011,
+    "genre": "Macera",
+    "rating": 9.2,
+    "duration": "8 Sezon",
+    "director": "David Benioff, D.B. Weiss",
+    "cast": "Emilia Clarke, Peter Dinklage, Kit Harington, Lena Headey",
+    "description": "Yedi krallığın tahti için savaşan aileler arasındaki güç mücadelesi, ihanet ve savaş hikayeleri. Kuzeyden gelen karanlık bir tehdit tüm krallığı tehdit eder.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2IzYzBiOTQtNGZmMi00NDI5LTgxMzMtN2EzZjA1NjhlOGMxXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+    "backdrop": "https://images5.alphacoders.com/690/690882.jpg"
+  },
+  {
+    "id": 33,
+    "title": "Stranger Things",
+    "type": "series",
+    "year": 2016,
+    "genre": "Bilim Kurgu",
+    "rating": 8.7,
+    "duration": "4 Sezon",
+    "director": "The Duffer Brothers",
+    "cast": "Millie Bobby Brown, Finn Wolfhard, Winona Ryder, David Harbour",
+    "description": "1980'lerde küçük bir kasabada kaybolan bir çocuk ve gizemli deneyler. Bir grup genç, doğaüstü güçlere sahip bir kızla tanışır ve tehlikeli bir paralel evreni keşfeder.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "backdrop": "https://images6.alphacoders.com/871/871545.jpg"
+  },
+  {
+    "id": 34,
+    "title": "The Last of Us",
+    "type": "series",
+    "year": 2023,
+    "genre": "Dram",
+    "rating": 8.8,
+    "duration": "1 Sezon",
+    "director": "Craig Mazin, Neil Druckmann",
+    "cast": "Pedro Pascal, Bella Ramsey, Anna Torv, Nick Offerman",
+    "description": "Mantar enfeksiyonunun dünyayı mahvettiği post-apokaliptik bir ortamda, yaşlı bir kaçakçı genç bir kızı ülke çapında güvenli bir yere götürmeye çalışır.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_FMjpg_UX1000_.jpg",
+    "backdrop": "https://images3.alphacoders.com/131/1314701.jpeg"
+  },
+  {
+    "id": 35,
+    "title": "The Witcher",
+    "type": "series",
+    "year": 2019,
+    "genre": "Macera",
+    "rating": 8.0,
+    "duration": "3 Sezon",
+    "director": "Lauren Schmidt Hissrich",
+    "cast": "Henry Cavill, Anya Chalotra, Freya Allan, Joey Batey",
+    "description": "Geralt of Rivia, mutasyona uğramış bir canavar avcısı, kaderinin ona bağladığı güçlü bir büyücü ve kaybolan bir prenses arasında yollarını bulmaya çalışır.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGE4MmVjMDgtMzIzYy00NjEwLWJlODMtMDI1MGY2ZDlhMzE2XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_.jpg",
+    "backdrop": "https://images6.alphacoders.com/107/1079205.jpg"
+  },
+  {
+    "id": 36,
+    "title": "The Boys",
+    "type": "series",
+    "year": 2019,
+    "genre": "Aksiyon",
+    "rating": 8.7,
+    "duration": "4 Sezon",
+    "director": "Eric Kripke",
+    "cast": "Karl Urban, Jack Quaid, Antony Starr, Erin Moriarty",
+    "description": "Süper kahramanların şöhretlerini kötüye kullandığı bir dünyada, bir grup vigilante onları durdurmak için harekete geçer.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTEyNDJhMDAtY2U5ZS00OTMzLTkwODktMjU3MjFkZWVlMGYyXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg",
+    "backdrop": "https://images2.alphacoders.com/131/1318517.png"
+  },
+  {
+    "id": 37,
+    "title": "The Mandalorian",
+    "type": "series",
+    "year": 2019,
+    "genre": "Bilim Kurgu",
+    "rating": 8.6,
+    "duration": "3 Sezon",
+    "director": "Jon Favreau",
+    "cast": "Pedro Pascal, Katee Sackhoff, Carl Weathers, Giancarlo Esposito",
+    "description": "İmparatorluğun çöküşünden sonra, yalnız bir ödül avcısı galaksinin dış bölgelerinde yaşar ve gizemli bir varlığı korumakla görevlendirilir.",
+    "poster": "https://lumiere-a.akamaihd.net/v1/images/p_themandalorian_s3_v2_3511_1d7d5774.jpeg",
+    "backdrop": "https://images6.alphacoders.com/108/1089184.jpg"
+  },
+  {
+    "id": 38,
+    "title": "Wednesday",
+    "type": "series",
+    "year": 2022,
+    "genre": "Komedi",
+    "rating": 8.1,
+    "duration": "1 Sezon",
+    "director": "Alfred Gough, Miles Millar",
+    "cast": "Jenna Ortega, Gwendoline Christie, Riki Lindhome, Jamie McShane",
+    "description": "Addams Ailesi'nin kızı Wednesday, psişik yeteneklerini geliştirmeye çalışırken Nevermore Academy'de gizemli cinayetleri çözmeye başlar.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2ZmMjEyZmYtOGM4YS00YTNhLWE3ZDMtNzQxM2RhNjBlODIyXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg",
+    "backdrop": "https://images7.alphacoders.com/129/1295892.jpeg"
+  },
+  {
+    "id": 39,
+    "title": "The Crown",
+    "type": "series",
+    "year": 2016,
+    "genre": "Dram",
+    "rating": 8.6,
+    "duration": "6 Sezon",
+    "director": "Peter Morgan",
+    "cast": "Claire Foy, Olivia Colman, Imelda Staunton, Matt Smith",
+    "description": "Kraliçe II. Elizabeth'in 20. yüzyılın ikinci yarısındaki saltanatını ve İngiliz Kraliyet Ailesi'nin yaşamını anlatan tarihi drama.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZmY0MzBlNjctNTJmZi00ZTY4LTg0YzMtMDg0M2FiMWNkOWY2XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg",
+    "backdrop": "https://images3.alphacoders.com/695/695933.jpg"
+  },
+  {
+    "id": 40,
+    "title": "Dark",
+    "type": "series",
+    "year": 2017,
+    "genre": "Gerilim",
+    "rating": 8.7,
+    "duration": "3 Sezon",
+    "director": "Baran bo Odar, Jantje Friese",
+    "cast": "Louis Hofmann, Karoline Eichhorn, Lisa Vicari, Maja Schöne",
+    "description": "Küçük bir Alman kasabasında bir çocuğun kaybolması, dört ailenin gizemli sırlarını ve zaman yolculuğunu ortaya çıkarır.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTk2NzY4MjkwNF5BMl5BanBnXkFtZTgwODk3NDI4NjM@._V1_.jpg",
+    "backdrop": "https://images5.alphacoders.com/107/1073419.jpg"
+  },
+  {
+    "id": 41,
+    "title": "Squid Game",
+    "type": "series",
+    "year": 2021,
+    "genre": "Gerilim",
+    "rating": 8.0,
+    "duration": "1 Sezon",
+    "director": "Hwang Dong-hyuk",
+    "cast": "Lee Jung-jae, Park Hae-soo, Wi Ha-joon, Jung Ho-yeon",
+    "description": "Borç içinde boğulan yüzlerce kişi, dev bir ödül için hayatlarını tehlikeye atarak çocuk oyunlarından oluşan gizemli bir turnuvaya katılır.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYWE3MDVkN2EtNjQ5MS00ZDQ4LTliNzYtMjc2YWMzMDEwMTA3XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+    "backdrop": "https://images4.alphacoders.com/118/1189908.jpeg"
+  },
+  {
+    "id": 42,
+    "title": "House of the Dragon",
+    "type": "series",
+    "year": 2022,
+    "genre": "Macera",
+    "rating": 8.4,
+    "duration": "2 Sezon",
+    "director": "Ryan Condal, George R.R. Martin",
+    "cast": "Emma D'Arcy, Matt Smith, Olivia Cooke, Rhys Ifans",
+    "description": "Game of Thrones'tan 200 yıl önce, Targaryen Hanedanı'nın yükselişi ve Ejderhalar Dansı olarak bilinen iç savaşın hikayesi.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjBiOGIyY2YtOTA3OC00YzY1LThkYjktMGRkYTNhNTExY2I2XkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_FMjpg_UX1000_.jpg",
+    "backdrop": "https://images3.alphacoders.com/127/1275166.jpg"
   }
 ]
 
