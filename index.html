@@ -20,7 +20,7 @@
                 </div>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home" class="nav-link active" data-page="home">Ana Sayfa</a></li>
-                    <li><a href="#movies" class="nav-link" data-page="movies">Filmler</a></li>
+                    <li><a href="#movies" class="nav-link" data-page="movies">Filmler & Diziler</a></li>
                     <li><a href="#favorites" class="nav-link" data-page="favorites">Favorilerim</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
@@ -57,6 +57,11 @@
                             <button class="search-btn" id="searchBtn">🔍</button>
                         </div>
                         <div class="filter-box">
+                            <select id="typeFilter" class="filter-select">
+                                <option value="all">Tümü</option>
+                                <option value="movie">Filmler</option>
+                                <option value="series">Diziler</option>
+                            </select>
                             <select id="categoryFilter" class="filter-select">
                                 <option value="all">Tüm Kategoriler</option>
                                 <option value="Aksiyon">Aksiyon</option>
@@ -88,7 +93,7 @@
             <!-- Movies Grid -->
             <section class="movies-section">
                 <div class="container">
-                    <h2 class="section-title">Popüler Filmler</h2>
+                    <h2 class="section-title">Popüler Filmler & Diziler</h2>
                     <div class="movies-grid" id="moviesGrid">
                         <!-- Movies will be dynamically loaded here -->
                     </div>
@@ -101,7 +106,7 @@
         <!-- Movies Page -->
         <section id="moviesPage" class="page-section">
             <div class="container">
-                <h2 class="page-title">Tüm Filmler</h2>
+                <h2 class="page-title">Tüm Filmler & Diziler</h2>
                 <div class="movies-grid" id="allMoviesGrid">
                     <!-- All movies will be displayed here -->
                 </div>
@@ -113,8 +118,8 @@
             <div class="container">
                 <h2 class="page-title">Favorilerim</h2>
                 <div id="favoritesEmpty" class="empty-state">
-                    <p>Henüz favori filminiz yok.</p>
-                    <p>Kalp ikonuna tıklayarak filmlerinizi favorilere ekleyebilirsiniz.</p>
+                    <p>Henüz favori film veya diziniz yok.</p>
+                    <p>Kalp ikonuna tıklayarak film ve dizilerinizi favorilere ekleyebilirsiniz.</p>
                 </div>
                 <div class="movies-grid" id="favoritesGrid">
                     <!-- Favorite movies will be displayed here -->
