@@ -13,6 +13,7 @@ const allMoviesGrid = document.getElementById('allMoviesGrid');
 const favoritesGrid = document.getElementById('favoritesGrid');
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
+const typeFilter = document.getElementById('typeFilter');
 const categoryFilter = document.getElementById('categoryFilter');
 const yearFilter = document.getElementById('yearFilter');
 const loadingSpinner = document.getElementById('loadingSpinner');
@@ -195,11 +196,13 @@ function setupHeroSection() {
 
 function applyFilters() {
     const searchTerm = searchInput.value.toLowerCase().trim();
+    const selectedType = typeFilter.value;
     const selectedCategory = categoryFilter.value;
     const selectedYear = yearFilter.value;
     
     filteredMovies = allMovies.filter(movie => {
         const matchesSearch = movie.title.toLowerCase().includes(searchTerm);
+        const matchesType = selectedType === 'all' || movie.type === selectedType;
         const matchesCategory = selectedCategory === 'all' || movie.genre === selectedCategory;
         
         let matchesYear = true;
@@ -213,7 +216,7 @@ function applyFilters() {
             }
         }
         
-        return matchesSearch && matchesCategory && matchesYear;
+        return matchesSearch && matchesType && matchesCategory && matchesYear;
     });
     
     renderMovies(filteredMovies);
@@ -369,6 +372,7 @@ function initializeEventListeners() {
     searchBtn.addEventListener('click', applyFilters);
     
     // Filters
+    typeFilter.addEventListener('change', applyFilters);
     categoryFilter.addEventListener('change', applyFilters);
     yearFilter.addEventListener('change', applyFilters);
     
