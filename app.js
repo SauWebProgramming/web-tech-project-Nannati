@@ -15,7 +15,12 @@ const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
 const typeFilter = document.getElementById('typeFilter');
 const categoryFilter = document.getElementById('categoryFilter');
+const ratingFilter = document.getElementById('ratingFilter');
 const yearFilter = document.getElementById('yearFilter');
+const sortFilter = document.getElementById('sortFilter');
+const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+const resultsCount = document.getElementById('resultsCount');
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 const loadingSpinner = document.getElementById('loadingSpinner');
 const noResults = document.getElementById('noResults');
 const movieModal = document.getElementById('movieModal');
@@ -69,6 +74,7 @@ async function loadMovies() {
         allMovies = data;
         filteredMovies = [...allMovies];
         
+        updateResultsCount();
         renderMovies(filteredMovies);
         renderAllMovies();
         renderFavorites();
@@ -78,7 +84,7 @@ async function loadMovies() {
     } catch (error) {
         console.error('Error loading movies:', error);
         showLoading(false);
-        moviesGrid.innerHTML = '<p class="error-message">Filmler yüklenirken bir hata oluştu.</p>';
+        moviesGrid.innerHTML = '<p class="error-message">An error occurred while loading movies.</p>';
     }
 }
 
@@ -182,7 +188,7 @@ function setupHeroSection() {
     const heroInfoBtn = document.getElementById('heroInfoBtn');
     
     heroPlayBtn.addEventListener('click', () => {
-        alert(`${heroMovie.title} oynatılıyor... (Demo)`);
+        alert(`Playing ${heroMovie.title}... (Demo)`);
     });
     
     heroInfoBtn.addEventListener('click', () => {
@@ -198,12 +204,22 @@ function applyFilters() {
     const searchTerm = searchInput.value.toLowerCase().trim();
     const selectedType = typeFilter.value;
     const selectedCategory = categoryFilter.value;
+    const selectedRating = ratingFilter.value;
     const selectedYear = yearFilter.value;
+    const selectedSort = sortFilter.value;
     
+    // Filter movies
     filteredMovies = allMovies.filter(movie => {
         const matchesSearch = movie.title.toLowerCase().includes(searchTerm);
         const matchesType = selectedType === 'all' || movie.type === selectedType;
         const matchesCategory = selectedCategory === 'all' || movie.genre === selectedCategory;
+        
+        // Rating filter
+        let matchesRating = true;
+        if (selectedRating !== 'all') {
+            const minRating = parseFloat(selectedRating);
+            matchesRating = movie.rating >= minRating;
+        }
         
         let matchesYear = true;
         if (selectedYear !== 'all') {
@@ -216,10 +232,61 @@ function applyFilters() {
             }
         }
         
-        return matchesSearch && matchesType && matchesCategory && matchesYear;
+        return matchesSearch && matchesType && matchesCategory && matchesRating && matchesYear;
     });
     
+    // Sort movies
+    applySorting(selectedSort);
+    
+    // Update results count
+    updateResultsCount();
+    
     renderMovies(filteredMovies);
+}
+
+// ===================================
+// SORTING FUNCTION
+// ===================================
+
+function applySorting(sortType) {
+    switch(sortType) {
+        case 'rating-desc':
+            filteredMovies.sort((a, b) => b.rating - a.rating);
+            break;
+        case 'rating-asc':
+            filteredMovies.sort((a, b) => a.rating - b.rating);
+            break;
+        case 'year-desc':
+            filteredMovies.sort((a, b) => b.year - a.year);
+            break;
+        case 'year-asc':
+            filteredMovies.sort((a, b) => a.year - b.year);
+            break;
+        case 'title-asc':
+            filteredMovies.sort((a, b) => a.title.localeCompare(b.title, 'en'));
+            break;
+        case 'title-desc':
+            filteredMovies.sort((a, b) => b.title.localeCompare(a.title, 'en'));
+            break;
+        default:
+            // Keep original order
+            break;
+    }
+}
+
+// ===================================
+// RESULTS COUNTER
+// ===================================
+
+function updateResultsCount() {
+    const count = filteredMovies.length;
+    const total = allMovies.length;
+    
+    if (count === total) {
+        resultsCount.textContent = `Total ${total} results`;
+    } else {
+        resultsCount.textContent = `Showing ${count} / ${total} results`;
+    }
 }
 
 // ===================================
@@ -374,7 +441,16 @@ function initializeEventListeners() {
     // Filters
     typeFilter.addEventListener('change', applyFilters);
     categoryFilter.addEventListener('change', applyFilters);
+    ratingFilter.addEventListener('change', applyFilters);
     yearFilter.addEventListener('change', applyFilters);
+    sortFilter.addEventListener('change', applyFilters);
+    
+    // Clear filters button
+    clearFiltersBtn.addEventListener('click', clearAllFilters);
+    
+    // Scroll to top button
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    window.addEventListener('scroll', handleScrollToTopVisibility);
     
     // Modal
     modalClose.addEventListener('click', closeModal);
@@ -429,10 +505,53 @@ function handleHeaderScroll() {
 }
 
 // ===================================
+// CLEAR ALL FILTERS
+// ===================================
+
+function clearAllFilters() {
+    // Reset all filter inputs
+    searchInput.value = '';
+    typeFilter.value = 'all';
+    categoryFilter.value = 'all';
+    ratingFilter.value = 'all';
+    yearFilter.value = 'all';
+    sortFilter.value = 'default';
+    
+    // Reapply filters (which will show all movies)
+    applyFilters();
+    
+    // Simple visual feedback
+    clearFiltersBtn.style.opacity = '0.6';
+    setTimeout(() => {
+        clearFiltersBtn.style.opacity = '1';
+    }, 200);
+}
+
+// ===================================
+// SCROLL TO TOP FUNCTIONALITY
+// ===================================
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function handleScrollToTopVisibility() {
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+}
+
+// ===================================
 // CONSOLE INFO
 // ===================================
 
-console.log('%c🎬 CineMax Movie Library', 'color: #e50914; font-size: 20px; font-weight: bold;');
-console.log('%cWeb Teknolojileri Projesi - 2025', 'color: #fff; font-size: 14px;');
-console.log('%cTeknolojiler: HTML5, CSS3, JavaScript ES6+, Fetch API, LocalStorage', 'color: #b3b3b3; font-size: 12px;');
+console.log('%c🎬 Vantage Movie Library', 'color: #e50914; font-size: 20px; font-weight: bold;');
+console.log('%cWeb Technologies Project - 2025', 'color: #fff; font-size: 14px;');
+console.log('%cTechnologies: HTML5, CSS3, JavaScript ES6+, Fetch API, LocalStorage', 'color: #b3b3b3; font-size: 12px;');
 
+    
