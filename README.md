@@ -50,16 +50,15 @@ This project allows users to browse, search, and manage favorite movies using **
 ```bash
 git clone https://github.com/SauWebProgramming/web-tech-project-Nannati.git .
  ```
-## Project Structure 
+## 📁 Project Structure
+
+```text
 web-tech-project-Nannati/
-│ 
-├── index.html       
-│ 
-├── styles.css     
-│             
-├── app.js           
-│                 
-└── movies.json   
+├── index.html
+├── styles.css
+├── app.js
+└── movies.json
+   
 
 
 👨‍💻 Developer Information
