@@ -52,13 +52,14 @@ git clone https://github.com/SauWebProgramming/web-tech-project-Nannati.git .
  ```
 ## Project Structure 
 web-tech-project-Nannati/
-├── index.html       # Main entry point
 │ 
-├── styles.css       # CSS styling & animations
+├── index.html       
+│ 
+├── styles.css     
 │             
-├── app.js           # SPA logic, Fetch API, DOM handling
+├── app.js           
 │                 
-└── movies.json      # Movie dataset (42 movies)
+└── movies.json   
 
 
 👨‍💻 Developer Information
