@@ -49,7 +49,7 @@ This project allows users to browse, search, and manage favorite movies using **
 
 ```bash
 git clone https://github.com/SauWebProgramming/web-tech-project-Nannati.git .
- 
+ ```
 ## Project Structure 
 web-tech-project-Nannati/
 ├── index.html       # Main entry point
