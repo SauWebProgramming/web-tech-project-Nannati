@@ -1,7 +1,7 @@
 🎬 Vantage - Interactive Movie Library
 A responsive Single Page Application (SPA) developed for ISE-201 Web Technologies. This project allows users to browse, search, and manage favorite movies using raw HTML, CSS, and JavaScript.
 
-Live Demo: [Insert GitHub Pages Link Here]
+Live Demo: [(https://sauwebprogramming.github.io/web-tech-project-Nannati/)]
 
 ⚡ Key Features
 SPA Architecture: Hash-based routing (#home, #favorites) with no page reloads.
