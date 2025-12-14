@@ -1,122 +1,105 @@
-# 🎬 CineMax - Interactive Movie Library (SPA)
+# 🎬 Vantage - Interactive Movie Library (SPA)
 
- Bu proje, ISE-201 Web Teknolojileri dersi için geliştirilmiştir.
+This project was developed for the ISE-201 Web Technologies course.
 
-## 🌟 Özellikler
+## 🌟 Features
 
-### ✅ Zorunlu İşlevler (Tümü Uygulandı)
+### ✅ Required Functions (All Implemented)
 
-- **📋 Liste/Grid Görünümü**: Tüm filmler modern kart tasarımıyla grid düzeninde gösterilir
-- **🔍 Arama ve Filtreleme**: 
-  - Film adına göre gerçek zamanlı arama
-  - Kategoriye göre filtreleme (Aksiyon, Bilim Kurgu, Dram, vb.)
-  - Yıla göre filtreleme (2024, 2023, 2010'lar, 2000'ler)
-- **📱 Detay Sayfası**: Filme tıklandığında dinamik modal ile detaylar gösterilir (SPA yaklaşımı)
-- **❤️ Favorilerim**: localStorage kullanılarak tarayıcıda saklanır, ayrı "Favorilerim" sayfası
+- **📋 List/Grid View**: All movies are displayed in a grid layout with modern card design
+- **🔍 Search and Filtering**: 
+  - Real-time search by movie title
+  - Filter by category (Action, Sci-Fi, Drama, etc.)
+  - Filter by year (2024, 2023, 2010s, 2000s)
+- **📱 Detail Page**: Details are shown in a dynamic modal when a movie is clicked (SPA approach)
+- **❤️ My Favorites**: Stored in the browser using localStorage, separate "My Favorites" page
 
-### 🎯 Teknik Özellikler
+### 🎯 Technical Features
 
 - ✅ Semantic HTML5 (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`)
-- ✅ Tamamen duyarlı tasarım (Responsive) - Mobil, tablet, masaüstü uyumlu
-- ✅ CSS Flexbox ve Grid kullanımı
+- ✅ Fully responsive design - Mobile, tablet, desktop compatible
+- ✅ CSS Flexbox and Grid usage
 - ✅ Modern JavaScript (ES6+)
-  - `const` ve `let` kullanımı (NO `var`)
+  - Using `const` and `let` (NO `var`)
   - Arrow functions (`=>`)
-  - `async/await` ve Promises
+  - `async/await` and Promises
   - Template literals
-- ✅ Fetch API ile yerel JSON dosyasından veri çekme
-- ✅ localStorage ile veri yönetimi
+- ✅ Fetching data from local JSON file with Fetch API
+- ✅ Data management with localStorage
 - ✅ Single Page Application (SPA) - Hash-based routing
-- ✅ Hamburger menü (mobil cihazlar için)
+- ✅ Hamburger menu (for mobile devices)
 
-## 🎨 Tasarım
+## 🎨 Design
 
 - Netflix-inspired dark theme
-- Modern ve minimalist arayüz
-- Smooth animasyonlar ve geçişler
+- Modern and minimalist interface
+- Smooth animations and transitions
 - Hero section (featured movie)
 - Interactive hover effects
-- Özel scrollbar tasarımı
+- Custom scrollbar design
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 
 ```
-web_cur/
-├── index.html          # Ana HTML dosyası (Semantic HTML5)
-├── styles.css          # Stil dosyası (CSS3, Flexbox, Grid, Responsive)
-├── app.js              # JavaScript dosyası (ES6+, Fetch, SPA)
-├── movies.json         # Film verileri (30 adet film)
-└── README.md           # Proje dokümantasyonu
+web-tech-project-Nannati/
+├── index.html          # Main HTML file (Semantic HTML5)
+├── styles.css          # Style file (CSS3, Flexbox, Grid, Responsive)
+├── app.js              # JavaScript file (ES6+, Fetch, SPA)
+├── movies.json         # Movie data (42 movies)
+└── README.md           # Project documentation
 ```
 
-## 🚀 Kurulum ve Çalıştırma
+## 🚀 Installation and Running
 
-### Seçenek 1: Live Server (Önerilen)
+### Option 1: Live Server (Recommended)
 
-1. Projeyi klonlayın:
+1. Clone the project:
 ```bash
 git clone <repository-url>
-cd web_cur
+web-tech-project-Nannati
 ```
 
-2. VS Code'da Live Server uzantısı ile çalıştırın:
-   - VS Code'da projeyi açın
-   - `index.html` dosyasına sağ tıklayın
-   - "Open with Live Server" seçeneğini tıklayın
+2. Run with Live Server extension in VS Code:
+   - Open the project in VS Code
+   - Right-click on `index.html` file
+   - Click "Open with Live Server"
 
-### Seçenek 2: Python HTTP Server
-
-```bash
-# Python 3.x
-python -m http.server 8000
-
-# Tarayıcıda açın: http://localhost:8000
 ```
 
-### Seçenek 3: Node.js HTTP Server
 
-```bash
-# npx ile (kurulum gerektirmez)
-npx http-server
+## 📖 Usage
 
-# Veya global kurulum
-npm install -g http-server
-http-server
-```
+### Home Page
+- Featured movie is displayed in the hero section
+- You can search for movies from the search bar
+- You can use category and year filters
+- Click on movie cards to view details
 
-## 📖 Kullanım
+### Movies Page
+- All movies are displayed in a list
+- Search and filtering features are available
 
-### Ana Sayfa
-- Hero section'da öne çıkan film gösterilir
-- Arama çubuğundan film arayabilirsiniz
-- Kategori ve yıl filtrelerini kullanabilirsiniz
-- Film kartlarına tıklayarak detayları görüntüleyebilirsiniz
+### My Favorites Page
+- Movies you marked as favorites are listed here
+- Click the heart icon to add or remove movies
+- Data is stored in your browser with localStorage
 
-### Filmler Sayfası
-- Tüm filmler liste halinde görüntülenir
-- Arama ve filtreleme özellikleri kullanılabilir
+### Movie Details
+- Modal opens when a movie card is clicked
+- Movie summary, actors, director information are displayed
+- Can also be added to favorites from the modal
 
-### Favorilerim Sayfası
-- Favori olarak işaretlediğiniz filmler burada listelenir
-- Kalp ikonuna tıklayarak film ekleyip çıkarabilirsiniz
-- Veriler tarayıcınızda localStorage ile saklanır
+## 🛠️ Technologies Used
 
-### Film Detayları
-- Film kartına tıklandığında modal açılır
-- Film özeti, oyuncular, yönetmen bilgileri görüntülenir
-- Modal'dan da favorilere eklenebilir
-
-## 🛠️ Kullanılan Teknolojiler
-
-| Teknoloji | Amaç |
+| Technology | Purpose |
 |-----------|------|
-| HTML5 | Semantic yapı, form validasyonu |
+| HTML5 | Semantic structure, form validation |
 | CSS3 | Flexbox, Grid, Media Queries, Animations |
 | JavaScript ES6+ | `const/let`, arrow functions, `async/await` |
-| Fetch API | JSON verilerini asenkron olarak yükleme |
-| localStorage | Favori filmleri tarayıcıda saklama |
-| Hash Routing | SPA navigasyonu (#home, #movies, #favorites) |
-| Google Fonts | Poppins font ailesi |
+| Fetch API | Asynchronously loading JSON data |
+| localStorage | Storing favorite movies in browser |
+| Hash Routing | SPA navigation (#home, #movies, #favorites) |
+| Google Fonts | Poppins font family |
 
 ## 📱 Responsive Breakpoints
 
@@ -124,100 +107,143 @@ http-server
 - **Tablet**: 481px - 768px
 - **Mobile**: ≤ 480px
 
-## 🎯 Proje Gereksinimleri Karşılama Durumu
+## 🎯 Project Requirements Compliance Status
 
 ### ✅ HTML5 & CSS3
-- [x] Anlamsal HTML kullanımı
-- [x] Duyarlı Tasarım (Media Queries)
-- [x] CSS Flexbox ve Grid
+- [x] Semantic HTML usage
+- [x] Responsive Design (Media Queries)
+- [x] CSS Flexbox and Grid
 
 ### ✅ Modern JavaScript (ES6+)
-- [x] `const` ve `let` kullanımı
+- [x] Using `const` and `let`
 - [x] Arrow Functions
-- [x] `async/await` ve Promise
+- [x] `async/await` and Promise
 
-### ✅ Asenkron JavaScript
-- [x] `fetch()` API kullanımı
-- [x] JSON verisi işleme ve DOM'a basma
+### ✅ Asynchronous JavaScript
+- [x] Using `fetch()` API
+- [x] Processing JSON data and rendering to DOM
 
-### ✅ Veri Yönetimi
-- [x] localStorage kullanımı
-- [x] Yerel JSON dosyası ile veri yönetimi
+### ✅ Data Management
+- [x] Using localStorage
+- [x] Data management with local JSON file
 
-### ✅ SPA İşlevleri
-- [x] Dinamik sayfa yükleme (hash-based routing)
-- [x] Modal ile detay gösterimi (ayrı HTML sayfası yok)
-- [x] Arama ve filtreleme
-- [x] Favoriler sistemi
+### ✅ SPA Functions
+- [x] Dynamic page loading (hash-based routing)
+- [x] Detail display with modal (no separate HTML page)
+- [x] Search and filtering
+- [x] Favorites system
+
+## 🌟 Bonus Features (For Extra Points)
+
+### Advanced CSS Animations and Transitions
+- ✅ **Staggered Card Entry**: Each movie card appears with a slight delay animation
+- ✅ **Smooth Hover Effects**: Cards grow, elevate and glow when hovered over
+- ✅ **Button Wave Effect**: Wave animation when buttons are clicked
+- ✅ **Heartbeat Animation**: Favorites animate with heartbeat effect
+- ✅ **Loading Indicator**: Spinning animated loading indicator
+- ✅ **Skeleton Loading**: Professional shimmer effect for loading states
+- ✅ **Modal Animations**: Scaling and fade-in effects for modals
+- ✅ **Hero Animations**: Staggered fade-in for hero content
+- ✅ **Navigation Animations**: Smooth slide and underline effects
+- ✅ **Page Transitions**: Fade-in animations between pages
+- ✅ **Smooth Scrolling**: Smooth scrolling behavior throughout the page
+- ✅ **Parallax Effects**: Multi-layered animations for depth
+- ✅ **Glow Effects**: Text and element glows on interaction
+- ✅ **Transform Animations**: Scale, rotate and translate effects
+
+### CSS Animation List (15+ animations):
+1. `fadeIn` - Fade in with opacity
+2. `fadeInUp` - Fade in from bottom to top
+3. `slideUp` - Slide up from bottom
+4. `slideInLeft` - Slide in from left
+5. `slideInRight` - Slide in from right
+6. `heartBeat` - Heartbeat effect
+7. `pulse` - Pulse opacity
+8. `spin` - Rotation animation
+9. `shimmer` - Loading shimmer
+10. `bounce` - Bounce effect
+11. `scaleIn` - Scale from small to large
+12. `float` - Floating movement
+
+### Advanced CSS Features:
+- ✅ Cubic-bezier timing functions for smooth animations
+- ✅ Transform combinations (scale + translate)
+- ✅ Backdrop filters for blur effects
+- ✅ Custom scrollbar design
+- ✅ CSS variables for theming
+- ✅ Pseudo-elements for effects (::before, ::after)
+- ✅ Complex gradients
+- ✅ Box-shadow animations
+- ✅ Text-shadow effects
 
 ## 🌐 GitHub Pages Deployment
 
-Proje, GitHub Pages üzerinden canlı olarak yayınlanmıştır:
+The project is live on GitHub Pages:
 
-**Canlı Demo**: [GitHub Pages URL buraya eklenecek]
+**Live Demo**: [GitHub Pages URL to be added here]
 
-### Deployment Adımları
+### Deployment Steps
 
-1. GitHub'da repository oluşturun
-2. Settings > Pages bölümüne gidin
-3. Source: "Deploy from a branch" seçin
-4. Branch: "main" ve root "/" seçin
-5. Save butonuna tıklayın
-6. Birkaç dakika içinde siteniz yayınlanacaktır
+1. Create a repository on GitHub
+2. Go to Settings > Pages
+3. Select Source: "Deploy from a branch"
+4. Select Branch: "main" and root "/"
+5. Click the Save button
+6. Your site will be published within a few minutes
 
-## 📊 Veri Yapısı (movies.json)
+## 📊 Data Structure (movies.json)
 
 ```json
 {
   "id": 1,
-  "title": "Film Adı",
+  "title": "Movie Title",
   "year": 2024,
-  "genre": "Kategori",
+  "genre": "Category",
   "rating": 8.5,
-  "duration": "120 dk",
-  "director": "Yönetmen",
-  "cast": "Oyuncular",
-  "description": "Film açıklaması",
+  "duration": "120 min",
+  "director": "Director",
+  "cast": "Actors",
+  "description": "Movie description",
   "poster": "Poster URL",
   "backdrop": "Backdrop URL"
 }
 ```
 
-## 🎓 Öğrenim Çıktıları
+## 🎓 Learning Outcomes
 
-Bu proje ile kazanılan beceriler:
+Skills gained from this project:
 
-- ✅ Semantic HTML5 yapısı oluşturma
-- ✅ Modern CSS teknikleri (Flexbox, Grid, Animations)
-- ✅ Responsive web tasarımı
-- ✅ JavaScript ile DOM manipülasyonu
-- ✅ Asenkron programlama (Fetch API, async/await)
-- ✅ SPA (Single Page Application) konsepti
-- ✅ localStorage ile veri yönetimi
-- ✅ Git version control ve GitHub kullanımı
+- ✅ Creating Semantic HTML5 structure
+- ✅ Modern CSS techniques (Flexbox, Grid, Animations)
+- ✅ Responsive web design
+- ✅ DOM manipulation with JavaScript
+- ✅ Asynchronous programming (Fetch API, async/await)
+- ✅ SPA (Single Page Application) concept
+- ✅ Data management with localStorage
+- ✅ Git version control and GitHub usage
 - ✅ Modern web development best practices
 
-## 👨‍💻 Geliştirici
+## 👨‍💻 Developer
 
-- **Ad Soyad**: [Natnael Nigussu Tilahun]
-- **Öğrenci No**: [B231200574]
-- **Ders**: ISE-201 Web Teknolojileri
-- **Yıl**: 2025
+- **Name**: [Natnael Nigussu Tilahun]
+- **Student ID**: [B231200574]
+- **Course**: ISE-201 Web Technologies
+- **Year**: 2025
 
-## 📝 Lisans
+## 📝 License
 
-Bu proje eğitim amaçlıdır ve ISE-201 Web Teknolojileri dersi için geliştirilmiştir.
+This project is for educational purposes and was developed for the ISE-201 Web Technologies course.
 
-## 🙏 Teşekkürler
+## 🙏 Acknowledgments
 
-Bu projeyi geliştirirken kullanılan kaynaklar:
+Resources used while developing this project:
 
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [CSS-Tricks](https://css-tricks.com/)
 - [JavaScript.info](https://javascript.info/)
-- [Unsplash](https://unsplash.com/) - Görsel içerikler için
+- [Unsplash](https://unsplash.com/) - For visual content
 
 ---
 
-**Not**: Proje tamamen statik HTML, CSS ve JavaScript kullanılarak geliştirilmiştir. Sunucu taraflı bir teknoloji (PHP, Node.js, vb.) kullanılmamıştır.
+**Note**: The project is developed entirely using static HTML, CSS and JavaScript. No server-side technology (PHP, Node.js, etc.) was used.
 
