@@ -30,6 +30,7 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 const heroSection = document.getElementById('heroSection');
+const themeToggle = document.getElementById('themeToggle');
 
 // ===================================
 // INITIALIZATION
@@ -42,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
 async function initializeApp() {
     // Load favorites from localStorage
     loadFavoritesFromStorage();
+
+    // Load theme preference from localStorage
+    loadThemeFromStorage();
     
     // Load movies from JSON
     await loadMovies();
@@ -447,6 +451,9 @@ function initializeEventListeners() {
     
     // Clear filters button
     clearFiltersBtn.addEventListener('click', clearAllFilters);
+
+    // Theme toggle
+    themeToggle.addEventListener('click', toggleTheme);
     
     // Scroll to top button
     scrollToTopBtn.addEventListener('click', scrollToTop);
@@ -545,7 +552,31 @@ function handleScrollToTopVisibility() {
         scrollToTopBtn.classList.remove('visible');
     }
 }
+// ===================================
+// THEME TOGGLE
+// ===================================
 
+function toggleTheme() {
+    const body = document.body;
+    
+    body.classList.toggle('light-mode');
+    
+    // Save preference
+    if (body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+function loadThemeFromStorage() {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+    }
+}
 // ===================================
 // CONSOLE INFO
 // ===================================
