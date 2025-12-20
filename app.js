@@ -5,6 +5,113 @@
 let allMovies = [];
 let filteredMovies = [];
 let favorites = [];
+let currentLang = 'en';
+
+// Translation dictionary
+const translations = {
+    en: {
+        navHome: 'Home',
+        navMovies: 'Movies & Series',
+        navFavorites: 'My Favorites',
+        searchPlaceholder: 'Search movies...',
+        btnPlay: '▶ Play',
+        btnInfo: 'ℹ Info',
+        filterAllTypes: 'All Types',
+        filterMovies: 'Movies',
+        filterSeries: 'Series',
+        filterAllCategories: 'All Categories',
+        filterAllRatings: 'All Ratings',
+        filterAllYears: 'All Years',
+        genreAction: 'Action',
+        genreSciFi: 'Sci-Fi',
+        genreComedy: 'Comedy',
+        genreDrama: 'Drama',
+        genreHorror: 'Horror',
+        genreAdventure: 'Adventure',
+        genreRomance: 'Romance',
+        genreThriller: 'Thriller',
+        ratingExcellent: '9+ ⭐ Excellent',
+        ratingGreat: '8+ ⭐ Great',
+        ratingGood: '7+ ⭐ Good',
+        ratingAverage: '6+ ⭐ Average',
+        sortBy: 'Sort By',
+        sortRatingDesc: 'Rating: High → Low',
+        sortRatingAsc: 'Rating: Low → High',
+        sortYearDesc: 'Year: New → Old',
+        sortYearAsc: 'Year: Old → New',
+        sortTitleAsc: 'Title: A → Z',
+        sortTitleDesc: 'Title: Z → A',
+        btnClear: 'Clear',
+        sectionPopular: 'Popular Movies & Series',
+        loading: 'Loading...',
+        noResults: 'No results found.',
+        pageAllMovies: 'All Movies & Series',
+        pageFavorites: 'My Favorites',
+        emptyFavTitle: 'No Favorites Yet',
+        emptyFavMsg1: "You don't have any favorite movies or series yet.",
+        emptyFavMsg2: 'Click the heart icon to add movies and series to your favorites.',
+        btnBrowse: 'Browse Movies',
+        modalSummary: 'Summary',
+        modalGenre: 'Genre:',
+        modalDirector: 'Director:',
+        modalCast: 'Cast:',
+        resultsTotal: 'Total',
+        resultsShowing: 'Showing',
+        resultsOf: '/',
+        resultsText: 'results'
+    },
+    tr: {
+        navHome: 'Ana Sayfa',
+        navMovies: 'Filmler & Diziler',
+        navFavorites: 'Favorilerim',
+        searchPlaceholder: 'Film ara...',
+        btnPlay: '▶ Oynat',
+        btnInfo: 'ℹ Bilgi',
+        filterAllTypes: 'Tüm Tipler',
+        filterMovies: 'Filmler',
+        filterSeries: 'Diziler',
+        filterAllCategories: 'Tüm Kategoriler',
+        filterAllRatings: 'Tüm Puanlar',
+        filterAllYears: 'Tüm Yıllar',
+        genreAction: 'Aksiyon',
+        genreSciFi: 'Bilim Kurgu',
+        genreComedy: 'Komedi',
+        genreDrama: 'Drama',
+        genreHorror: 'Korku',
+        genreAdventure: 'Macera',
+        genreRomance: 'Romantik',
+        genreThriller: 'Gerilim',
+        ratingExcellent: '9+ ⭐ Mükemmel',
+        ratingGreat: '8+ ⭐ Harika',
+        ratingGood: '7+ ⭐ İyi',
+        ratingAverage: '6+ ⭐ Orta',
+        sortBy: 'Sırala',
+        sortRatingDesc: 'Puan: Yüksek → Düşük',
+        sortRatingAsc: 'Puan: Düşük → Yüksek',
+        sortYearDesc: 'Yıl: Yeni → Eski',
+        sortYearAsc: 'Yıl: Eski → Yeni',
+        sortTitleAsc: 'İsim: A → Z',
+        sortTitleDesc: 'İsim: Z → A',
+        btnClear: 'Temizle',
+        sectionPopular: 'Popüler Filmler & Diziler',
+        loading: 'Yükleniyor...',
+        noResults: 'Sonuç bulunamadı.',
+        pageAllMovies: 'Tüm Filmler & Diziler',
+        pageFavorites: 'Favorilerim',
+        emptyFavTitle: 'Henüz Favori Yok',
+        emptyFavMsg1: 'Henüz favori film veya diziniz yok.',
+        emptyFavMsg2: 'Filmler ve diziler eklemek için kalp ikonuna tıklayın.',
+        btnBrowse: 'Filmlere Göz At',
+        modalSummary: 'Özet',
+        modalGenre: 'Tür:',
+        modalDirector: 'Yönetmen:',
+        modalCast: 'Oyuncular:',
+        resultsTotal: 'Toplam',
+        resultsShowing: 'Gösterilen',
+        resultsOf: '/',
+        resultsText: 'sonuç'
+    }
+};
 
 // DOM Elements
 const mainContent = document.getElementById('mainContent');
@@ -31,6 +138,7 @@ const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 const heroSection = document.getElementById('heroSection');
 const themeToggle = document.getElementById('themeToggle');
+const langToggle = document.getElementById('langToggle');
 
 // ===================================
 // INITIALIZATION
@@ -50,6 +158,9 @@ async function initializeApp() {
     // Load movies from JSON
     await loadMovies();
     
+     // Load language preference from localStorage
+    loadLanguageFromStorage();
+
     // Initialize event listeners
     initializeEventListeners();
     
@@ -287,9 +398,9 @@ function updateResultsCount() {
     const total = allMovies.length;
     
     if (count === total) {
-        resultsCount.textContent = `Total ${total} results`;
+        resultsCount.textContent = `${translations[currentLang].resultsTotal} ${total} ${translations[currentLang].resultsText}`;
     } else {
-        resultsCount.textContent = `Showing ${count} / ${total} results`;
+        resultsCount.textContent = `${translations[currentLang].resultsShowing} ${count} ${translations[currentLang].resultsOf} ${total} ${translations[currentLang].resultsText}`;
     }
 }
 
@@ -454,6 +565,10 @@ function initializeEventListeners() {
 
     // Theme toggle
     themeToggle.addEventListener('click', toggleTheme);
+
+     
+    // Language toggle
+    langToggle.addEventListener('click', toggleLanguage);
     
     // Scroll to top button
     scrollToTopBtn.addEventListener('click', scrollToTop);
@@ -577,6 +692,47 @@ function loadThemeFromStorage() {
         body.classList.add('light-mode');
     }
 }
+// ===================================
+// LANGUAGE TOGGLE
+// ===================================
+
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'tr' : 'en';
+    langToggle.textContent = currentLang.toUpperCase();
+    localStorage.setItem('language', currentLang);
+    updatePageLanguage();
+}
+
+function loadLanguageFromStorage() {
+    const savedLang = localStorage.getItem('language');
+    if (savedLang) {
+        currentLang = savedLang;
+        langToggle.textContent = currentLang.toUpperCase();
+    }
+    updatePageLanguage();
+}
+
+function updatePageLanguage() {
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+            element.textContent = translations[currentLang][key];
+        }
+    });
+    
+    // Update placeholder attributes
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[currentLang][key]) {
+            element.placeholder = translations[currentLang][key];
+        }
+    });
+    
+    // Update results count
+    updateResultsCount();
+}
+
 // ===================================
 // CONSOLE INFO
 // ===================================
