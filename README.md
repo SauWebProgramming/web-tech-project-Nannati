@@ -6,7 +6,7 @@ This project allows users to browse, search, and manage favorite movies using **
 ---
 
 ## 🚀 Live Demo
-👉 
+👉 [View Live Demo](https://github.com/SauWebProgramming/web-tech-project-Nannati)
 
 ---
 
@@ -18,6 +18,8 @@ This project allows users to browse, search, and manage favorite movies using **
 - **Favorites System:** Persists user favorites using `localStorage`  
 - **Responsive UI:** Mobile-first design with CSS Grid and Flexbox  
 - **Detailed View:** Modal popups displaying movie details, cast, and director  
+- **Multi-Language**: English/Turkish (EN/TR) bilingual interface with instant switching
+- **Dark/Light Mode**: Theme toggle with smooth transitions and localStorage persistence
 
 ---
 
@@ -25,7 +27,7 @@ This project allows users to browse, search, and manage favorite movies using **
 
 - **15+ Custom Animations:** Staggered card entry, heartbeat effects, and skeleton loading  
 - **Modern UX:** Smooth scrolling, glassmorphism effects, and button ripple animations  
-
+- **Theme Transitions**: Smooth color morphing between dark and light modes
 ---
 
 ## 🛠️ Tech Stack
@@ -40,6 +42,8 @@ This project allows users to browse, search, and manage favorite movies using **
 - async / await
 - DOM Manipulation
 - Event Delegation
+- i18n Pattern (Internationalization)
+- localStorage API  
 
 > No frameworks or libraries were used — built entirely with **vanilla technologies**.
 
@@ -52,16 +56,16 @@ git clone https://github.com/SauWebProgramming/web-tech-project-Nannati.git .
  ```
 ## 📁 Project Structure
 
-```text
+```
 web-tech-project-Nannati/
 ├── index.html
 ├── styles.css
 ├── app.js
 └── movies.json
-   
+```
 
-
-👨‍💻 Developer Information
+---
+### 👨‍💻 Developer Information
 
 Name: Natnael Nigussu Tilahun
 
@@ -69,7 +73,7 @@ Student ID: B231200574
 
 Course: ISE-201 Web Technologies (2025)
 
-📌 Notes
+### 📌 Notes
 
 This project was developed for educational purposes only.
 No server-side technologies were used.
