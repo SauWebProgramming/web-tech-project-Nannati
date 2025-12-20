@@ -6,7 +6,7 @@ This project allows users to browse, search, and manage favorite movies using **
 ---
 
 ## 🚀 Live Demo
-👉 [View Live Demo](https://github.com/SauWebProgramming/web-tech-project-Nannati)
+👉 [View Live Demo](https://sauwebprogramming.github.io/web-tech-project-Nannati/)
 
 ---
 
