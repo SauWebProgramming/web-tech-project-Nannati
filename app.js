@@ -55,6 +55,7 @@ const translations = {
         modalGenre: 'Genre:',
         modalDirector: 'Director:',
         modalCast: 'Cast:',
+        btnTrailer: '🎬 Trailer',
         resultsTotal: 'Total',
         resultsShowing: 'Showing',
         resultsOf: '/',
@@ -106,6 +107,7 @@ const translations = {
         modalGenre: 'Tür:',
         modalDirector: 'Yönetmen:',
         modalCast: 'Oyuncular:',
+        btnTrailer: '🎬 Fragman',
         resultsTotal: 'Toplam',
         resultsShowing: 'Gösterilen',
         resultsOf: '/',
@@ -419,6 +421,7 @@ function showMovieDetail(movie) {
     const modalCast = document.getElementById('modalCast');
     const modalHero = document.getElementById('modalHero');
     const modalFavoriteBtn = document.getElementById('modalFavoriteBtn');
+    const modalTrailerBtn = document.getElementById('modalTrailerBtn');
     
     // Set modal content
     modalTitle.textContent = movie.title;
@@ -436,6 +439,10 @@ function showMovieDetail(movie) {
     modalFavoriteBtn.textContent = isFavorite ? '♥' : '♡';
     modalFavoriteBtn.className = `btn btn-icon ${isFavorite ? 'active' : ''}`;
     
+    // Trailer button (non-functional, just for show)
+    modalTrailerBtn.onclick = () => {
+        // Just for display purposes
+    };
     // Favorite button event
     modalFavoriteBtn.onclick = () => {
         toggleFavorite(movie);
