@@ -21,9 +21,10 @@
                     <h1 class="logo">Vantage</h1>
                 </div>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
-                    <li><a href="#movies" class="nav-link" data-page="movies">Movies & Series</a></li>
-                    <li><a href="#favorites" class="nav-link" data-page="favorites">My Favorites</a></li>
+                    <li><a href="#home" class="nav-link active" data-page="home" data-i18n="navHome">Home</a></li>
+                    <li><a href="#movies" class="nav-link" data-page="movies" data-i18n="navMovies">Movies & Series</a></li>
+                    <li><a href="#favorites" class="nav-link" data-page="favorites" data-i18n="navFavorites">My Favorites</a></li>
+                    <li><button class="lang-toggle" id="langToggle">EN</button></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -44,8 +45,8 @@
                     <h2 class="hero-title"></h2>
                     <p class="hero-description"></p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary" id="heroPlayBtn">▶ Play</button>
-                        <button class="btn btn-secondary" id="heroInfoBtn">ℹ Info</button>
+                        <button class="btn btn-primary" id="heroPlayBtn"><span data-i18n="btnPlay">▶ Play</span></button>
+                        <button class="btn btn-secondary" id="heroInfoBtn"><span data-i18n="btnInfo">ℹ Info</span></button>
                     </div>
                 </div>
             </section>
@@ -55,8 +56,14 @@
                 <div class="container">
                     <!-- Search Bar -->
                     <div class="search-bar-wrapper">
+                        <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                            <div class="theme-toggle-inner">
+                                <span class="theme-icon-moon">☾</span>
+                                <span class="theme-icon-sun">☀</span>
+                            </div>
+                        </button>
                         <div class="search-box">
-                            <input type="search" id="searchInput" placeholder="Search movies..." class="search-input">
+                            <input type="search" id="searchInput" placeholder="Search movies..." class="search-input" data-i18n-placeholder="searchPlaceholder">
                             <button class="search-btn" id="searchBtn">🔍</button>
                         </div>
                         <div class="results-info">
@@ -68,30 +75,30 @@
                     <div class="filters-wrapper">
                         <div class="filter-group">
                             <select id="typeFilter" class="filter-select">
-                                <option value="all">All Types</option>
-                                <option value="movie">Movies</option>
-                                <option value="series">Series</option>
+                                <option value="all" data-i18n="filterAllTypes">All Types</option>
+                                <option value="movie" data-i18n="filterMovies">Movies</option>
+                                <option value="series" data-i18n="filterSeries">Series</option>
                             </select>
                             <select id="categoryFilter" class="filter-select">
-                                <option value="all">All Categories</option>
-                                <option value="Action">Action</option>
-                                <option value="Sci-Fi">Sci-Fi</option>
-                                <option value="Comedy">Comedy</option>
-                                <option value="Drama">Drama</option>
-                                <option value="Horror">Horror</option>
-                                <option value="Adventure">Adventure</option>
-                                <option value="Romance">Romance</option>
-                                <option value="Thriller">Thriller</option>
+                                <option value="all" data-i18n="filterAllCategories">All Categories</option>
+                                <option value="Action" data-i18n="genreAction">Action</option>
+                                <option value="Sci-Fi" data-i18n="genreSciFi">Sci-Fi</option>
+                                <option value="Comedy" data-i18n="genreComedy">Comedy</option>
+                                <option value="Drama" data-i18n="genreDrama">Drama</option>
+                                <option value="Horror" data-i18n="genreHorror">Horror</option>
+                                <option value="Adventure" data-i18n="genreAdventure">Adventure</option>
+                                <option value="Romance" data-i18n="genreRomance">Romance</option>
+                                <option value="Thriller" data-i18n="genreThriller">Thriller</option>
                             </select>
                             <select id="ratingFilter" class="filter-select">
-                                <option value="all">All Ratings</option>
-                                <option value="9">9+ ⭐ Excellent</option>
-                                <option value="8">8+ ⭐ Great</option>
-                                <option value="7">7+ ⭐ Good</option>
-                                <option value="6">6+ ⭐ Average</option>
+                                <option value="all" data-i18n="filterAllRatings">All Ratings</option>
+                                <option value="9" data-i18n="ratingExcellent">9+ ⭐ Excellent</option>
+                                <option value="8" data-i18n="ratingGreat">8+ ⭐ Great</option>
+                                <option value="7" data-i18n="ratingGood">7+ ⭐ Good</option>
+                                <option value="6" data-i18n="ratingAverage">6+ ⭐ Average</option>
                             </select>
                             <select id="yearFilter" class="filter-select">
-                                <option value="all">All Years</option>
+                                <option value="all" data-i18n="filterAllYears">All Years</option>
                                 <option value="2024">2024</option>
                                 <option value="2023">2023</option>
                                 <option value="2022">2022</option>
@@ -103,16 +110,16 @@
                                 <option value="2000s">2000-2009</option>
                             </select>
                             <select id="sortFilter" class="filter-select">
-                                <option value="default">Sort By</option>
-                                <option value="rating-desc">Rating: High → Low</option>
-                                <option value="rating-asc">Rating: Low → High</option>
-                                <option value="year-desc">Year: New → Old</option>
-                                <option value="year-asc">Year: Old → New</option>
-                                <option value="title-asc">Title: A → Z</option>
-                                <option value="title-desc">Title: Z → A</option>
+                                <option value="default" data-i18n="sortBy">Sort By</option>
+                                <option value="rating-desc" data-i18n="sortRatingDesc">Rating: High → Low</option>
+                                <option value="rating-asc" data-i18n="sortRatingAsc">Rating: Low → High</option>
+                                <option value="year-desc" data-i18n="sortYearDesc">Year: New → Old</option>
+                                <option value="year-asc" data-i18n="sortYearAsc">Year: Old → New</option>
+                                <option value="title-asc" data-i18n="sortTitleAsc">Title: A → Z</option>
+                                <option value="title-desc" data-i18n="sortTitleDesc">Title: Z → A</option>
                             </select>
                             <button id="clearFiltersBtn" class="btn btn-clear">
-                                <span>✖</span> Clear
+                                <span>✖</span> <span data-i18n="btnClear">Clear</span>
                             </button>
                         </div>
                     </div>
@@ -122,12 +129,12 @@
             <!-- Movies Grid -->
             <section class="movies-section">
                 <div class="container">
-                    <h2 class="section-title">Popular Movies & Series</h2>
+                    <h2 class="section-title" data-i18n="sectionPopular">Popular Movies & Series</h2>
                     <div class="movies-grid" id="moviesGrid">
                         <!-- Movies will be dynamically loaded here -->
                     </div>
-                    <div class="loading" id="loadingSpinner">Loading...</div>
-                    <div class="no-results" id="noResults">No results found.</div>
+                    <div class="loading" id="loadingSpinner"><span data-i18n="loading">Loading...</span></div>
+                    <div class="no-results" id="noResults"><span data-i18n="noResults">No results found.</span></div>
                 </div>
             </section>
         </section>
@@ -135,7 +142,7 @@
         <!-- Movies Page -->
         <section id="moviesPage" class="page-section">
             <div class="container">
-                <h2 class="page-title">All Movies & Series</h2>
+                <h2 class="page-title" data-i18n="pageAllMovies">All Movies & Series</h2>
                 <div class="movies-grid" id="allMoviesGrid">
                     <!-- All movies will be displayed here -->
                 </div>
@@ -145,13 +152,13 @@
        <!-- Favorites Page -->
         <section id="favoritesPage" class="page-section">
             <div class="container">
-                <h2 class="page-title">My Favorites</h2>
+                <h2 class="page-title" data-i18n="pageFavorites">My Favorites</h2>
                 <div id="favoritesEmpty" class="empty-state">
                     <div class="empty-icon">♡</div>
-                    <h3>No Favorites Yet</h3>
-                    <p> You don't have any favorite movies or series yet.</p>
-                    <p> Click the heart icon to add movies and series to your favorites.</p>
-                    <a href="#home" class="btn btn-primary empty-btn">Browse Movies</a>
+                    <h3 data-i18n="emptyFavTitle">No Favorites Yet</h3>
+                    <p data-i18n="emptyFavMsg1"> You don't have any favorite movies or series yet.</p>
+                    <p data-i18n="emptyFavMsg2"> Click the heart icon to add movies and series to your favorites.</p>
+                    <a href="#home" class="btn btn-primary empty-btn" data-i18n="btnBrowse">Browse Movies</a>
                 </div>
                 <div class="movies-grid" id="favoritesGrid">
                     <!-- Favorite movies will be displayed here -->
@@ -174,27 +181,27 @@
                         <span class="modal-duration" id="modalDuration"></span>
                     </div>
                     <div class="modal-buttons">
-                        <button class="btn btn-primary">▶ Play</button>
+                        <button class="btn btn-primary"><span data-i18n="btnPlay">▶ Play</span></button>
                         <button class="btn btn-icon" id="modalFavoriteBtn" title="Add to Favorites">♡</button>
                     </div>
                 </div>
             </div>
             <div class="modal-body">
                 <div class="modal-description">
-                    <h3>Summary</h3>
+                    <h3 data-i18n="modalSummary">Summary</h3>
                     <p id="modalDescription"></p>
                 </div>
                 <div class="modal-info">
                     <div class="modal-info-item">
-                        <strong>Genre:</strong>
+                        <strong data-i18n="modalGenre">Genre:</strong>
                         <span id="modalGenre"></span>
                     </div>
                     <div class="modal-info-item">
-                        <strong>Director:</strong>
+                        <strong data-i18n="modalDirector">Director:</strong>
                         <span id="modalDirector"></span>
                     </div>
                     <div class="modal-info-item">
-                        <strong>Cast:</strong>
+                        <strong data-i18n="modalCast">Cast:</strong>
                         <span id="modalCast"></span>
                     </div>
                 </div>
